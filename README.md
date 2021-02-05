@@ -16,5 +16,21 @@
 - Instance metadata is data about your instance that you can use to configure or manage the running instance. Instance metadata is divided into categories, for example, host name, events, and security groups.  
 - You can also use instance metadata to access user data that you specified when launching your instance.  
 - 결정적인 차이는 Launching Instance = User Data vs Running Instance = Meta Data.  
+7) NAT Instance & NAT Gateway  
+- 둘 다 목적은 VPC 내 Public Subnet에 존재하면서 Private Subnet의 Instance가 outbound IPv4 traffic과 연결되도록 하기 위함.  
+- Security Group과 Associate할 수 있는 건 NAT Instance.  
+- Port Forwading과 Bastion servers 지원하는 건 NAT Instance.  
+- https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html  
+8) AWS Direct Connect  
+- On-premise와 AWS로의 전용 네트워크.
+- https://aws.amazon.com/ko/directconnect/  
+9) Site-to-site VPN  
+- VPN connection: A secure connection between your on-premises equipment and your VPCs.  
+- You can enable access to your remote network from your VPC by creating an AWS Site-to-Site VPN (Site-to-Site VPN) connection, and configuring routing to pass traffic through the connection.  
+- Low to modest BW.  
+10) AWS Database Migration Service & Schema Conversion Tool  
+- Database Migration Service : Shutdown 없이 Migration 가능하고 homegeneous, heterogeneous DB 다 가능.  
+- Schema Conversion Tool : Heterogeneous DB 간 source schema 맞추기.  
+
 
 
