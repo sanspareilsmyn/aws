@@ -54,7 +54,19 @@
 - IAM Auth는 ElastiCache랑 사용 못 함.  
 - Memcached : 모델이 단순한 경우. 코어가 여러 개거나 스레드가 있는 경우. Scale out and in 필요한 경우.  
 - Redis : Authentication 하는 경우. Replication, High Availability, and Cluster Sharding.  
-
+16) AWS Transit Gateway  
+- The AWS Transit Gateway allows customers to connect their Amazon VPCs and their on-premises networks to a single gateway. With AWS Transit Gateway, you only have to create and manage a single connection from the central gateway into each Amazon VPC, on-premises data center, or remote office across your network.  
+17) AWS Redshift  
+- Fully-managed petabyte-scale cloud-based data warehouse product designed for large scale data set storage and analysis.  
+- Redshift Spectrum을 사용하면 Redshift table로 불러올 필요 없이 S3로부터 효과적으로 데이터 쿼리 가능.  
+18) Tasks that require root user credentials  
+- Change your account settings.  
+- Restore IAM user permissions.  
+- Activate IAM access to the Billing and Cost Management console.  
+- Close your AWS account.  
+- Configure an Amazon S3 bucket to enable MFA.  
+- https://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html#aws_tasks-that-require-root  
+31번부터
 
 
 
