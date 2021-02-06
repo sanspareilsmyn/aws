@@ -66,7 +66,24 @@
 - Close your AWS account.  
 - Configure an Amazon S3 bucket to enable MFA.  
 - https://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html#aws_tasks-that-require-root  
-31번부터
+
+19) Amazon S3 Transfer Acceleration  
+- 먼 거리의 클라이언트와 S3 Bucket 간 속도 증대 by CloudFront Edge  
+
+20) Security Group  
+- Security Group은 Stateful이다. Outbound traffic 모두 허락하며, 항상 permissive하고 Deny rule 못 만든다.  
+- Default는 Allows all inbound traffic from other instances associated with the default security group. Allows all outbound traffic from the instance.  
+
+21) AWS Storage Gateway  
+- Hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage.  
+- Tape Gateway : Tape Gateway enables you to replace using physical tapes on-premises with virtual tapes in AWS without changing existing backup workflows.  
+- Volume Gateway  : Volume Gateway to present cloud-based iSCSI block storage volumes to your on-premises applications. The Volume Gateway provides either a local cache or full volumes on-premises while also storing full copies of your volumes in the AWS cloud.  
+- File Gateway : File Gateway offers SMB or NFS-based access to data in Amazon S3 with local caching. It can be used for on-premises applications, and for Amazon EC2-based applications that need file protocol access to S3 object storage.  
+
+22) S3 One Zone-IA (Infrequent Access)  
+- 20% cheaper than Standard IA(최소 3개의 Multiple AZ). 30일 후부터 S3 Standard에 있는 걸 One Zone-IA로 바꿀 수 있음.  
+-  https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html  
+
 
 
 
