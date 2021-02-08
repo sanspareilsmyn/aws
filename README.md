@@ -112,7 +112,7 @@
 - Launce Type은 EC2 or Fargate. EC2로 하면 Instances와 EBS에 따라 돈 내고, Fargate로 하면 vCPU와 Memory 사용량에 따라 돈 냄.  
 
 25) AWS SQS - FIFO  
-- 3,000 messages per second with batching, or 300 messages per second without batching.  
+- 3,000 messages per second with batching 10 messages per operation(maximum), or 300 messages per second without batching.  
 - Suffix should be .fifo.  
 - Can't convert standard SQS into FIFO.  
 
@@ -129,6 +129,11 @@
 
 29) AWS KMS  
 - Deleting a customer master key (CMK) in AWS Key Management Service (AWS KMS) is destructive and potentially dangerous. Therefore, AWS KMS enforces a waiting period. To delete a CMK in AWS KMS you schedule key deletion. You can set the waiting period from a minimum of 7 days up to a maximum of 30 days. The default waiting period is 30 days. During the waiting period, the CMK status and key state is Pending deletion.  
+- Server-side Encrpytion과 Client-side Encryption.  
+- Server-side Encryption인 SSE-S3 / SSE-KMS / SSE-C  
+- SSE-S3는 Unique Key로 Encrypt된다. AES-256 쓴다.  
+- SSE-KMS는 CMK(Customer Master Keys)를 저장한다. Audit trail that shows when your CMK was used and by whom 제공한다.  
+- SSE-C는 Customer-provided Keys다. 사용자가 Encrpytion Key 관리하고 S3는 Encryption만 한다.  
 
 30) Elastic Fabric Adapter  
 - A network interface for Amazon EC2 instances that enables customers to run applications requiring high levels of inter-node communications at scale on AWS.  
@@ -136,11 +141,51 @@
 31) S3 Transfer Acceleration  
 - There are no S3 data transfer charges when data is transferred in from the internet. Also with S3TA, you pay only for transfers that are accelerated.  
 
-26번부터
+32) S3 Intelligent Tiering  
+- The S3 Intelligent-Tiering storage class is designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead. It works by storing objects in two access tiers: one tier that is optimized for frequent access and another lower-cost tier that is optimized for infrequent access.  
+- Minimun storage duration : 30 days  
 
+33) AWS Snowball Edge  
+- It provides up to 80 TB of usable HDD storage, 40 vCPUs, 1 TB of SATA SSD storage, and up to 40 Gb network connectivity to address large scale data transfer and pre-processing use cases.  
+- cf. SnowMobile : 10 PB  
 
+34) Storage volume that can't be used as boot volumes  
+- HDD는 boot volume 안 됨. SSD는 됨 (gp, io).
+- Throughput Optimized HDD (st1)  
+- Cold HDD (sc1)  
+- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html
 
+35) Versioning on S3  
+- Once you version-enable a bucket, it can never return to an unversioned state. You can, however, suspend versioning on that bucket.  
 
+36) Amazon FSx for Windows Server & AWS Managed Microsoft AD  
+- Amazon FSx for Windows File Server : Accessible over the industry-standard Service Message Block (SMB) protocol. It is built on Windows Server. Microsoft Active Directory (AD) integration. Microsoft’s Distributed File System (DFS).  
+- AWS Managed Microsoft AD : enables your directory-aware workloads and AWS resources to use managed Active Directory in the AWS Cloud.  
 
+37) Amazon FSx for Windows File Server & AWS Managed Microsoft AD
+- Amazon FSx for Windows File Server : Accessible over the industry-standard Service Message Block (SMB) protocol. It is built on Windows Server. Microsoft Active Directory (AD) integration. Microsoft’s Distributed File System (DFS).
+- AWS Managed Microsoft AD : Enables your directory-aware workloads and AWS resources to use managed Active Directory in the AWS Cloud. AWS Managed Microsoft AD is built on the actual Microsoft Active Directory and does not require you to synchronize or replicate data from your existing Active Directory to the cloud.  
 
-   
+38) Instance Store based EC2 Instance  
+- Instance store provides temporary block-level storage for your instance. This storage is located on disks that are physically attached to the host computer.  
+- Instance store is ideal for the temporary storage of information that changes frequently such as buffers, caches, scratch data, and other temporary content, or for data that is replicated across a fleet of instances, such as a load-balanced pool of web servers.  
+- You can specify instance store volumes for an instance only when you launch it. You can't detach an instance store volume from one instance and attach it to a different instance.  
+- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html  
+
+39) Programming Language supported by Lambda runtime  
+- C#/.NET, Go, Java, Node.js, Python, Ruby  
+
+40) Placement Groups  
+- Cluster / Partition / Spread  
+- You can have a maximum of 7 running instances per AZ per group.  
+
+41) AWS Lambda  
+- 1000 concurrent executions per AWS account per region. If your Amazon SNS message deliveries to AWS Lambda contribute to crossing these concurrency quotas, your Amazon SNS message deliveries will be throttled. You need to contact AWS support to raise the account limit.  
+
+42) Prefix of S3  
+- There are no limits to the number of prefixes in a bucket. You can increase your read or write performance by parallelizing reads.  
+- Your application can achieve at least 3,500 PUT/COPY/POST/DELETE or 5,500 GET/HEAD requests per second per prefix in a bucket.  
+
+43) API Gateway  
+- API Gateway creates RESTful APIs : Are HTTP-based. / Enable stateless client-server communication. / Implement standard HTTP methods such as GET, POST, PUT, PATCH, and DELETE.
+- API Gateway creates WebSocket APIs : Adhere to the WebSocket protocol, which enables stateful, full-duplex communication between client and server. Route incoming messages based on message content.  
