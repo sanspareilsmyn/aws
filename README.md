@@ -18,6 +18,7 @@
 
 5) EC2 Auto Scaling Group lifecycle hook  
 - EC2가 Generate / Terminate 될 때 특정 action을 취하도록 설정 가능.  
+- When an instance is paused, it remains in a wait state either until you complete the lifecycle action using the complete-lifecycle-action command or the CompleteLifecycleAction operation, or until the timeout period ends (one hour by default). For example, you could install or configure software on newly launched instances, or download log files from an instance before it terminates.  
 
 6) EC2 Instance Meta Data vs User Data  
 - Instance metadata is data about your instance that you can use to configure or manage the running instance. Instance metadata is divided into categories, for example, host name, events, and security groups.  
@@ -40,6 +41,7 @@
 - You can enable access to your remote network from your VPC by creating an AWS Site-to-Site VPN (Site-to-Site VPN) connection, and configuring routing to pass traffic through the connection.  
 - Low to modest BW.  
 - A.K.A IPSec VPN.  
+- cf) Direct Connect + VPN (https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect-vpn.html)  
 
 10) AWS Database Migration Service & Schema Conversion Tool  
 - Database Migration Service : Shutdown 없이 Migration 가능하고 homegeneous, heterogeneous DB 다 가능.  
@@ -113,6 +115,28 @@
 - 3,000 messages per second with batching, or 300 messages per second without batching.  
 - Suffix should be .fifo.  
 - Can't convert standard SQS into FIFO.  
+
+26) AWS Auto Scaling Group 
+- Rebalancing : 새로 만든 다음에 옛날 것 제거. (When rebalancing, Amazon EC2 Auto Scaling launches new instances before terminating the old ones, so that rebalancing does not compromise the performance or availability of your application.)  
+- Fault Tolerance : 문제 있는 것 지운 다음에 새로 만든다. (Amazon EC2 Auto Scaling creates a new scaling activity for terminating the unhealthy instance and then terminates it. Later, another scaling activity launches a new instance to replace the terminated instance.)  
+
+27) Private Hosted Zone  
+- A container for records for a domain that you host in one or more Amazon virtual private clouds (VPCs). You create a hosted zone for a domain (such as example.com), and then you create records to tell Amazon Route 53 how you want traffic to be routed for that domain within and among your VPCs.  
+- 이걸 쓰려면 두 개 풀어야 된다. enableDnsHostnames & enableDnsSupport  
+
+28) AMI  
+- A region에서 B region으로 AMI가 복사될 때는 B region에 snapshot이 자동으로 생성된다.  
+
+29) AWS KMS  
+- Deleting a customer master key (CMK) in AWS Key Management Service (AWS KMS) is destructive and potentially dangerous. Therefore, AWS KMS enforces a waiting period. To delete a CMK in AWS KMS you schedule key deletion. You can set the waiting period from a minimum of 7 days up to a maximum of 30 days. The default waiting period is 30 days. During the waiting period, the CMK status and key state is Pending deletion.  
+
+30) Elastic Fabric Adapter  
+- A network interface for Amazon EC2 instances that enables customers to run applications requiring high levels of inter-node communications at scale on AWS.  
+
+31) S3 Transfer Acceleration  
+- There are no S3 data transfer charges when data is transferred in from the internet. Also with S3TA, you pay only for transfers that are accelerated.  
+
+26번부터
 
 
 
