@@ -189,3 +189,18 @@
 43) API Gateway  
 - API Gateway creates RESTful APIs : Are HTTP-based. / Enable stateless client-server communication. / Implement standard HTTP methods such as GET, POST, PUT, PATCH, and DELETE.
 - API Gateway creates WebSocket APIs : Adhere to the WebSocket protocol, which enables stateful, full-duplex communication between client and server. Route incoming messages based on message content.  
+
+44) WAF
+- AWS WAF gives you control over how traffic reaches your applications by enabling you to create security rules that block common attack patterns, such as SQL injection or cross-site scripting, and rules that filter out specific traffic patterns you define.  
+- Can set IP Match Conditions.  
+
+45) Private IP range
+- 192.168.0.0 - 192.168.255.255 (65,536 IP addresses) 
+- 172.16.0.0 - 172.31.255.255 (1,048,576 IP addresses) 
+- 10.0.0.0 - 10.255.255.255 (16,777,216 IP addresses) 
+
+46) Default Security Group Rule
+- Allow inbound traffic from network interfaces (and their associated instances) that are assigned to the same security group. 
+- Allows all outbound traffic.  
+
+30번부터
