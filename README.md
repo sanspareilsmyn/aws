@@ -203,4 +203,19 @@
 - Allow inbound traffic from network interfaces (and their associated instances) that are assigned to the same security group. 
 - Allows all outbound traffic.  
 
-30번부터
+47) Spot Block  
+- Spot Instances with a defined duration
+
+48) Bastion Host  
+- Including bastion hosts in your VPC environment enables you to securely connect to your Linux instances without exposing your environment to the Internet. 
+- Bastion Host는 Port 22로 SSH 쓴다. TCP 쓰는 Network Load Balancer가 알맞음.
+
+49) Secrets Manager 
+- AWS Secrets Manager helps you protect secrets needed to access your applications, services, and IT resources. The service enables you to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. 
+- Users and applications retrieve secrets with a call to Secrets Manager APIs, eliminating the need to hardcode sensitive information in plain text. Secrets Manager offers secret rotation with built-in integration for Amazon RDS, Amazon Redshift, and Amazon DocumentDB.  
+- 주의. SSM Parameter Store도 secret store 역할 가능하지만 rotating key manually.  
+
+50) IAM 관련
+- Service Control Policy (SCP) : AWS Organizations에 대한 규칙.  
+- IAM Permission Boundary : IAM roles or users에만 적용 가능. IAM Groups에는 안 됨.  
+
