@@ -219,3 +219,4 @@
 - Service Control Policy (SCP) : AWS Organizations에 대한 규칙.  
 - IAM Permission Boundary : IAM roles or users에만 적용 가능. IAM Groups에는 안 됨.  
 
+
