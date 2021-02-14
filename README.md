@@ -1,4 +1,5 @@
 # AWS Solution Architect Associate 중요 개념 정리  
+## 1. Dump
 1) Global Accelerator vs CloudFront  
 - Global Accelerator는 UDP 같은 Non-http에서. CloudFront는 http에서. 둘 다 Latency 빠르게 만드는 효과.  
 
@@ -218,5 +219,55 @@
 50) IAM 관련
 - Service Control Policy (SCP) : AWS Organizations에 대한 규칙.  
 - IAM Permission Boundary : IAM roles or users에만 적용 가능. IAM Groups에는 안 됨.  
+
+## 2. FAQ (https://aws.amazon.com/faqs/?nc1=h_ls)
+1) EC2
+- Root Device로 Local instance store와 EBS를 쓰는 건 어떤 차이가 있나요?
+- 답 : Local instance store는 instance 꺼지면 끝. EBS는 instance의 lifetime과는 별개.
+- EC2 Ultra Clusters : P4d instances are deployed in hyperscale clusters called EC2 UltraClusters. Each EC2 UltraCluster is comprised of more than 4,000 NVIDIA A100 Tensor Core GPUs, Petabit-scale networking, and scalable low latency storage with FSx for Lustre.  - EBS snapshots are only available through the Amazon EC2 APIs.
+- You can enable Multi-Attach on an EBS Provisioned IOPS io1 volume to allow a volume to be concurrently attached to up to sixteen Nitro-based EC2 instances within the same Availability Zone.  
+- Snapshot은 real time으로 만들 수 있음.
+
+
+
+2) EC2 Auto Scaling
+3) EC2 Windows
+4) EC2 Container Registry
+5) EC2 Container Service
+6) AWS Lambda
+7) AWS Elastic Beanstalk
+8) AWS Fargate
+9) ELB
+10) EBS
+11) AWS S3
+12) AWS S3 Glacier
+13) AWS Snowball
+14) AWS Snowball Edge
+15) AWS Storage Gateway
+16) Amazon Aurora
+17) Amazon RDS
+18) Amazon DynamoDB
+19) Amazon ElastiCache
+20) Amazon Redshift
+21) AWS Database Migration Service
+22) Amazon VPC
+23) Amazon CloudFront
+24) Amazon Route 53
+25) Amazon API Gateway
+26) Amazon Direct Connect
+27) Elastic Load Balancing
+28) Amazon CloudWatch
+29) AWS Auto Scaling
+30) AWS CloudFormation
+31) Amazon CloudTrail
+32) Amazon Config
+33) Amazon Athena
+34) IAM
+35) Amazon Cognito
+36) AWS Key Management Service
+37) AWS Directory Service
+38) AWS Organizations
+39) AWS Shield
+40) AWS WAF
 
 
